@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Caraballo, Devoun B.</title>
+</head>
+<body>
+    <button id="loadJoke">Get Joke</button>
+    <p id="jokeResult">dad's joke</p>
+
+    <script>
+        document.getElementById("loadJoke").addEventListener("click", async () => {
+            const res = await fetch("⁦https://icanhazdadjoke.com/⁩", {
+                headers: {
+                    Accept: "application/json"
+                }
+            });
+            const data = await res.json();
+            document.getElementById("jokeResult").innerText = data.joke;
+        });
+    </script>
+</body>
+
+</html>
