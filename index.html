@@ -1,25 +1,21 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-    <title>Caraballo, Devoun B.</title>
+    <title>Garaballo, Devoun B.</title>
 </head>
 <body>
-    <button id="loadJoke">Get Joke</button>
-    <p id="jokeResult">dad's joke</p>
-
+    <button id="loadJobs">Get Jobs</button>
+    <p id="jokeResult">dad's jobs</p>
     <script>
-        document.getElementById("loadJoke").addEventListener("click", async () => {
-            const res = await fetch("⁦https://icanhazdadjoke.com/⁩", {
-                headers: {
-                    Accept: "application/json"
-                }
-            });
-            const data = await res.json();
-            document.getElementById("jokeResult").innerText = data.joke;
+    document.getElementById("loadJobs").addEventListener("click", async () => {
+        const res = await fetch("https://icanhazdadjoke.com/", {
+            headers: {
+                Accept: "application/json"
+            }
         });
+        const data = await res.json();
+        document.getElementById("jokeResult").innerText = data.joke;
+    });
     </script>
 </body>
-
 </html>
